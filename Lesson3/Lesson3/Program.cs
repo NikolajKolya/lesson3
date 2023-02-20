@@ -7,12 +7,6 @@ namespace Lesson3
     {
         static void Main(string[] args)
         {
-            // Кубик с 6 гранями
-            var d6 = new D6();
-
-            // Кубик с 20 гранями
-            var d20 = new D20();
-
             IDice toThrow = null;
 
             Console.WriteLine("Какой кубик бросаем?");
@@ -20,11 +14,15 @@ namespace Lesson3
             
             if (readStr == "6")
             {
-                toThrow = d6;
+                toThrow = new D6();
             }
             else if (readStr == "20")
             {
-                toThrow= d20;
+                toThrow= new D20();
+            }
+            else if (readStr == "cheat")
+            {
+                toThrow = new Cheat();
             }
             else
             {
